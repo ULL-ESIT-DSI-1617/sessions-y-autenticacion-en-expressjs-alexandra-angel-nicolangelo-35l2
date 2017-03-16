@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/ULL-ESIT-DSI-1617/sessions-y-autenticacion-en-expressjs-alexandra-angel-nicolangelo-35l2",
   "dependencies": {
-    "express": "^4.15.2"
+    "bcrypt-nodejs": "0.0.3",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.2",
+    "express-session": "^1.15.1"
   }
 }

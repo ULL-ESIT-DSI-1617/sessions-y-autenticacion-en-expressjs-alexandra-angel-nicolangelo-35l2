@@ -8,9 +8,6 @@ var path = require('path');
 var util = require("util");
 app.use(express.static('public'));
 
-var users = require("./users.json");
-    // app1 = usuarios();
-
 var bcrypt = require("bcrypt-nodejs");
 var hash = bcrypt.hashSync("amyspassword");
 var hash1 = bcrypt.hashSync("juanpassword");

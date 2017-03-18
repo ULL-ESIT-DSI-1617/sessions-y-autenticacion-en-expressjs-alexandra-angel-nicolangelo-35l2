@@ -91,6 +91,8 @@ app.get('/restricted', restrict, function(req, res){
 app.get('/logout', function(req, res){
   // destroy the user's session to log them out
   // will be re-created next request
+  res.render('logout');
+  res.redirect('/');
   req.session.destroy(function(){
     res.redirect('/');
   });

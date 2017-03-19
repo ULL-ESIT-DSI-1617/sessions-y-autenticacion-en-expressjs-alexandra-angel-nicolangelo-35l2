@@ -6,21 +6,44 @@ var express = require('express'),
 var cookieParser = require('cookie-parser');
 var path = require('path');
 var util = require("util");
+
+//Parser
+var bodyParser = require('body-parser');
+
+//Middleware
 app.use(express.static('public'));
 
+//Password encriptados
 var bcrypt = require("bcrypt-nodejs");
 var hash = bcrypt.hashSync("amyspassword");
 var hash1 = bcrypt.hashSync("juanpassword");
 var hash2 = bcrypt.hashSync("antoniopassword");
-console.log('passwords hashed =', hash, hash1, hash2);
+
+//console.log('passwords hashed =', hash, hash1, hash2);
+console.log(`amyspassword hashed = ${hash}`);
+console.log(`juanpassword hashed = ${hash1}`);
+console.log(`antoniopassword hashed = ${hash2}`);
 
 var users = { 
-  amy : hash, 
+  amy : hash,
+  juan : hash1,
+  antonio : hash2,
   juan : bcrypt.hashSync("juanpassword"),
-  antonio : bcrypt.hashSync("antoniopassword") 
+  antonio : bcrypt.hashSync("antoniopassword"),
+  amy : bcrypt.hashSync("amyspassword")
 };
 
-var instructions = 'Visit these urls in the browser:<ul>  <li> <a href="https://1-informatica-nico-apache.c9.io:8080/content">https://1-informatica-nico-apache.c9.io:8080/content</a> </li>  <li> <a href="https://1-informatica-nico-apache.c9.io:8080/content/chapter1.html">https://1-informatica-nico-apache.c9.io:8080/content/chapter1.html</a> </li>  <li> <a href="https://1-informatica-nico-apache.c9.io:8080/login?username=juan&password=juanspassword">https://1-informatica-nico-apache.c9.io:8080/login?username=juan&password=juanspassword</a> </li>  <li> <a href="https://1-informatica-nico-apache.c9.io:8080/login?username=amy&password=amyspassword">https://1-informatica-nico-apache.c9.io:8080/login?username=amy&password=amyspassword</a> </li>  <li> <a href="https://1-informatica-nico-apache.c9.io:8080/logout">https://1-informatica-nico-apache.c9.io:8080/logout</a> </li></ul>';
+var instructions = `
+Visit these urls in the browser:
+<ul>  
+  <li> <a href="https://dsi-alex-94.c9users.io:8080/content">https://dsi-alex-94.c9users.io:8080/content</a> </li>
+  <li> <a href="https://dsi-alex-94.c9users.io:8080/content/chapter1.html">https://dsi-alex-94.c9users.io:8080/content/chapter1.html</a> </li>
+  <li> <a href="https://dsi-alex-94.c9users.io:8080/login?username=antonio&password=antoniopassword">https://dsi-alex-94.c9users.io:8080/login?username=antonio&password=antoniopassword</a> </li>
+  <li> <a href="https://dsi-alex-94.c9users.io:8080/login?username=juan&password=juanpassword">https://dsi-alex-94.c9users.io:8080/login?username=juan&password=juanpassword</a> </li>
+  <li> <a href="https://dsi-alex-94.c9users.io:8080/login?username=amy&password=amyspassword">https://dsi-alex-94.c9users.io:8080/login?username=amy&password=amyspassword</a> </li>
+  <li> <a href="https://dsi-alex-94.c9users.io:8080/logout">https://dsi-alex-94.c9users.io:8080/logout</a> </li>
+</ul>
+`;
 
 
 var layout = function(x) { return x+"<br />\n"+instructions; };
@@ -84,4 +107,4 @@ app.get('/content/*?',
 
 
 app.listen(8080);
-console.log("app running at https://1-informatica-nico-apache.c9.io:8080");
+console.log("app running at https://dsi-alex-94.c9users.io:8080");

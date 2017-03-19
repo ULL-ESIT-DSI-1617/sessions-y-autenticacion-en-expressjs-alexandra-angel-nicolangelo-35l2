@@ -53,7 +53,7 @@ Casiano Rodríguez León
 ## Despliegue del libro
 * [Despliegue del libro en Iaas de Alexandra]()
 * [Despliegue del libro en Iaas de Ángel]()
-* [Despliegue del libro en Iaas de Nicolangelo]()
+* [Despliegue del libro en Iaas de Nicolangelo](http://10.6.128.226:8080/)
 
 ## Enlace del grupo
 [Enlace al grupo en GitHub](https://github.com/ULL-ESIT-DSI-1617/sessions-y-autenticacion-en-expressjs-alexandra-angel-nicolangelo-35l2)

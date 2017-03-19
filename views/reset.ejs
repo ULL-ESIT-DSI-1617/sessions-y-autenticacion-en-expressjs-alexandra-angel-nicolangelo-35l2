@@ -1,0 +1,17 @@
+
+<% var title = 'Authentication Example' %>
+<% include head %>
+
+<h1>Reset password</h1>
+<%- message %>
+<form method="post" action="/reset">
+  <p>
+    <label>New Password:</label>
+    <input type="text" name="password">
+  </p>
+  <p>
+    <input type="submit" value="Reset now!">
+  </p>
+</form>
+
+<% include foot %>

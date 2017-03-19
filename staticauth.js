@@ -71,13 +71,17 @@ app.get('/logout', function (req, res) {
   req.session.destroy();
   res.send(layout("logout success!"));
 });
- 
+
+
+app.get('/content', express.static(path.join(__dirname, 'public')));
+
+
 // Get content endpoint
 app.get('/content/*?', 
     auth  // next only if authenticated
 );
  
-app.use('/content', express.static(path.join(__dirname, 'public')));
+
 
 app.listen(8080);
 console.log("app running at https://1-informatica-nico-apache.c9.io:8080");

@@ -88,29 +88,23 @@ app.get('/reset', function(req, res){
   res.render('reset');
 });
 
-app.post('/reset', function(req, res){
-  res.send('reseteado <a href="/login">Login</a>');
-  // authenticate(req.body.username, req.body.password, function(err, user){
-  //   if (user) {
-  //     // Regenerate session when signing in
-  //     // to prevent fixation
-  //     req.session.regenerate(function(){
-  //       // Store the user's primary key
-  //       // in the session store to be retrieved,
-  //       // or in this case the entire user object
-  //       req.session.user = user;
-  //       req.session.success = 'Authenticated as ' + user.name
-  //         + ' click to <a href="/logout">logout</a>. '
-  //         + ' You may now access <a href="/restricted">/restricted</a>.';
-  //       res.redirect('back');
-  //     });
-  //   } else {
-  //     req.session.error = 'Authentication failed, please check your '
-  //       + ' username and password.'
-  //       + ' (use "tj" and "foobar")';
-  //     res.redirect('/login');
-  //   }
-  // });
+app.post('/reset', function(req, res, fn){
+  var reset_username, reset_password;
+  reset_username = req.body.username;
+  reset_password = req.body.password;
+  var user = users[reset_username];
+  if (!user) res.send('ERROR: No se ha encontrado el usuario <a href="/reset">Reset</a><br/>');
+  else{
+    hash({ password: reset_password }, function (err, pass, salt, hash) {
+    if (err) throw err;
+    // store the salt & hash in the "db"
+    users.tj.salt = salt;
+    users.tj.hash = hash;
+    res.send('Reseteado <a href="/login">Login</a><br/>'+
+            'username: '+reset_username+
+            ' | password: '+reset_password);
+    }); 
+  }
 });
 
 app.get('/restricted', restrict, function(req, res){

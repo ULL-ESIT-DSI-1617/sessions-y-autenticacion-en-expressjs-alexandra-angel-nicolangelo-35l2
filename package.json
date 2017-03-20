@@ -1,0 +1,40 @@
+{
+  "name": "practica4.1",
+  "version": "1.0.0",
+  "description": "practica sessions-y-autenticacion-en-expressjs grupal",
+  "main": "staticauth.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ULL-ESIT-DSI-1617/sessions-y-autenticacion-en-expressjs-alexandra-angel-nicolangelo-35l2.git"
+  },
+  "author": "Alexandra, Nicolangelo, Angel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ULL-ESIT-DSI-1617/sessions-y-autenticacion-en-expressjs-alexandra-angel-nicolangelo-35l2/issues"
+  },
+  "homepage": "https://github.com/ULL-ESIT-DSI-1617/sessions-y-autenticacion-en-expressjs-alexandra-angel-nicolangelo-35l2",
+  "dependencies": {
+    "async": "^2.1.5",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "^2.0.0-beta.1",
+    "cookie-signature": "^1.0.6",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "express-session": "^1.15.1",
+<<<<<<< HEAD
+    "gitbook": "^3.2.2",
+    "gitbook-cli": "^2.3.0",
+    "pbkdf2-password": "^1.2.1"
+=======
+    "mongoose": "^4.9.0",
+    "nodemailer": "^3.1.7",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
+>>>>>>> 849fe01e9a08a4d17bb03ee5edb2f0052cab9077
+  }
+}

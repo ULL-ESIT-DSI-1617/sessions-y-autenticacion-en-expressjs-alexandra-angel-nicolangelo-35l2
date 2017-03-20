@@ -52,7 +52,7 @@ Casiano Rodríguez León
 
 ## Despliegue del libro
 * [Despliegue del libro en Iaas de Alexandra]()
-* [Despliegue del libro en Iaas de Ángel]()
+* [Despliegue del libro en Iaas de Ángel](http://10.6.128.52:8080/)
 * [Despliegue del libro en Iaas de Nicolangelo](http://10.6.128.226:8080/)
 
 ## Enlace del grupo
